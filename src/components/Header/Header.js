@@ -3,13 +3,7 @@ import "./Header.scss";
 import ControlBar from "../../containers/ControlBar/ControlBar";
 
 const Header = (props) => {
-  const generateSequencerButtonArray = (numSteps) => {
-    let sequencerButtonArray = [];
-    for (let i = 1; i <= numSteps; i++) {
-      sequencerButtonArray.push(i);
-    }
-    return sequencerButtonArray;
-  };
+  const stepHeader = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
 
   return (
     <header id="dm-header">
@@ -23,17 +17,15 @@ const Header = (props) => {
         <div id="dm-header-step-numbers"></div>
       </div>
       <div id="dm-header-step-labels">
-        {generateSequencerButtonArray(props.numSteps).map(
-          (currentStepNumber, index) => (
-            <div
-              className="dm-header-step-label"
-              key={`header-step-${index}`}
-              style={{ width: props.buttonWidth }}
-            >
-              {index + 1}
-            </div>
-          )
-        )}
+        {stepHeader.map((stepNumber) => (
+          <div
+            className="dm-header-step-label"
+            key={`header-step-${stepNumber}`}
+            style={{ width: props.buttonWidth }}
+          >
+            {stepNumber}
+          </div>
+        ))}
       </div>
     </header>
   );
