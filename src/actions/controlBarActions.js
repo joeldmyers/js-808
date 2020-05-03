@@ -19,11 +19,11 @@ export const stopPlaying = () => {
   };
 };
 
-export const updateCurrentSequence = (sequenceName) => {
+export const updateCurrentPlayStep = (currentPlayStep) => {
   return {
-    type: "RESET_TO_SEQUENCE",
+    type: "UPDATE_CURRENT_PLAY_STEP",
     payload: {
-      sequenceName,
+      currentPlayStep,
     },
   };
 };

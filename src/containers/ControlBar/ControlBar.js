@@ -4,29 +4,44 @@ import {
   updateBPM,
   startPlaying,
   stopPlaying,
+  updateCurrentPlayStep,
 } from "../../actions/controlBarActions";
-
 import { resetToBuiltInSequence } from "../../actions/instrumentStatusActions";
-
 import "./ControlBar.scss";
 
 const ControlBar = () => {
   const bpm = useSelector((state) => state.controlBar.bpm);
-  const currentSequence = useSelector(
-    (state) => state.controlBar.currentSequence
-  );
-
   const dispatch = useDispatch();
 
   const handleBPMChange = (e) => {
     dispatch(updateBPM(e.currentTarget.value));
   };
 
-  const handleStartClick = () => {};
+  const handleStartClick = () => {
+    dispatch(startPlaying());
+    startPlayingSampler();
+  };
+
+  let drumMachinePlayInterval;
+
+  const startPlayingSampler = (bpm) => {
+    let counter = 1;
+    drumMachinePlayInterval = setInterval(() => {
+      const currentPlayStep = (counter % 16) + 1;
+      dispatch(updateCurrentPlayStep(currentPlayStep));
+      step++;
+    }, 800);
+  };
+
+  const stopPlayingSampler = () => {
+    clearInterval(drumMachinePlayInterval);
+  };
 
   const handleStopClick = () => {
     dispatch(stopPlaying());
+    stopPlayingSampler();
   };
+
   const handleUpdateSequence = (e) => {
     dispatch(resetToBuiltInSequence(e.currentTarget.value));
   };
