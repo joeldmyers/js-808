@@ -9,12 +9,8 @@ import store from "../store";
 
 const App = () => {
   const numSteps = 16;
-  const instruments = ["kick", "snare", "open hat", "closed hat"];
+  const instruments = ["kick", "snare", "open-hat", "closed-hat"];
   const buttonWidth = `calc(${100 / numSteps}% - 12px)`;
-
-  const slugifyInstrumentName = (instrumentName) => {
-    return instrumentName.replace(" ", "-");
-  };
 
   return (
     <Provider store={store}>
@@ -26,7 +22,7 @@ const App = () => {
               instrumentName={instrumentName}
               numSteps={numSteps}
               buttonWidth={buttonWidth}
-              key={`${slugifyInstrumentName(instrumentName)}-${index}`}
+              key={`${instrumentName}-${index}`}
             />
           );
         })}

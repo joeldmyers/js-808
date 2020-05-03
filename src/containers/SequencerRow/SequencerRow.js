@@ -1,39 +1,34 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleButtonStatus } from "../../actions/sequencerRowActions";
+import { toggleButtonStatus } from "../../actions/instrumentStatusActions";
 import SequencerButton from "../../components/SequencerButton/SequencerButton";
 import "./SequencerRow.scss";
 
 const SequencerRow = (props) => {
+  const { instrumentName } = props;
   const bpm = useSelector((state) => state.controlBar.bpm);
+  const instrumentsStatus = useSelector((state) => state.instrumentStatus);
+  const currentInstrumentStatus = instrumentsStatus[instrumentName];
   const dispatch = useDispatch();
-  const generateSequencerButtonArray = (numSteps) => {
-    let sequencerButtonArray = [];
-    for (let i = 1; i <= numSteps; i++) {
-      sequencerButtonArray.push(i);
-    }
-    return sequencerButtonArray;
-  };
 
-  const startPlaying = (numSteps) => {};
+  const presentableInstrumentName = instrumentName.replace("-", " ");
 
   return (
     <div className="dm-sequencer-row">
-      <div className="dm-sequencer-row-name">{props.instrumentName}</div>
+      <div className="dm-sequencer-row-name">{presentableInstrumentName}</div>
       <div className="dm-sequencer-row-buttons">
-        {generateSequencerButtonArray(props.numSteps).map(
-          (currentStepNumber, index) => {
-            return (
-              <SequencerButton
-                sequenceNumber={index}
-                numSteps={props.numSteps}
-                currentStepNumber={currentStepNumber}
-                buttonWidth={props.buttonWidth}
-                key={`${props.instrumentName}-${index}`}
-              />
-            );
-          }
-        )}
+        {currentInstrumentStatus.map((activeStatus, index) => {
+          const active = activeStatus === 1 ? true : false;
+          return (
+            <SequencerButton
+              sequenceNumber={index}
+              numSteps={props.numSteps}
+              buttonWidth={props.buttonWidth}
+              key={`${props.instrumentName}-${index}`}
+              active={active}
+            />
+          );
+        })}
       </div>
     </div>
   );

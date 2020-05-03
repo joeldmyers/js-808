@@ -4,7 +4,6 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-  console.log("state before update", state, action);
   switch (action.type) {
     case "UPDATE_BPM":
       const { newBPM } = action.payload;
