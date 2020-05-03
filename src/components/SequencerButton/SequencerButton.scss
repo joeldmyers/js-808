@@ -1,5 +1,6 @@
 @import "../../styles/colors.scss";
 .dm-sequencer-btn {
+  position: relative;
   height: 65px;
   border-radius: 4px;
   margin: 6px;
@@ -27,5 +28,16 @@
   &:nth-child(15),
   &:nth-child(16) {
     background: $off-white;
+  }
+}
+
+.dm-sequencer-btn-light {
+  position: absolute;
+  top: 8px;
+  left: calc(50% - 8px);
+  font-size: 16px;
+  color: $off-light-red;
+  &.active {
+    color: $on-light-red;
   }
 }
