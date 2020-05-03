@@ -1,4 +1,5 @@
 import React from "react";
+import Sound from "react-sound";
 import "./SequencerButton.scss";
 import { useDispatch } from "react-redux";
 import { toggleButtonStatus } from "../../actions/instrumentStatusActions";
@@ -18,6 +19,7 @@ const SequencerButton = (props) => {
   };
 
   const isFlashing = !isSelected && isActivelyPlaying;
+  const audioUrl = `/audio/${instrumentName}.wav`;
 
   return (
     <button
@@ -33,6 +35,9 @@ const SequencerButton = (props) => {
       >
         &#9673;
       </span>
+      {isSelected && isActivelyPlaying && (
+        <Sound url={audioUrl} playStatus={Sound.status.PLAYING} volume="30" />
+      )}
     </button>
   );
 };
