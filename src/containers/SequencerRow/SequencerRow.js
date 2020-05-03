@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { toggleButtonStatus } from "../../actions/instrumentStatusActions";
 import SequencerButton from "../../components/SequencerButton/SequencerButton";
 import "./SequencerRow.scss";
@@ -9,8 +9,6 @@ const SequencerRow = (props) => {
   const bpm = useSelector((state) => state.controlBar.bpm);
   const instrumentsStatus = useSelector((state) => state.instrumentStatus);
   const currentInstrumentStatus = instrumentsStatus[instrumentName];
-  const dispatch = useDispatch();
-
   const presentableInstrumentName = instrumentName.replace("-", " ");
 
   return (
