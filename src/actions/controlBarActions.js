@@ -18,3 +18,12 @@ export const stopPlaying = () => {
     type: "STOP_PLAYING",
   };
 };
+
+export const updateCurrentSequence = (sequenceName) => {
+  return {
+    type: "RESET_TO_SEQUENCE",
+    payload: {
+      sequenceName,
+    },
+  };
+};

@@ -1,0 +1,34 @@
+@import "../../styles/colors.scss";
+
+#dm-bpm-selector-input {
+  width: 65px;
+  height: 40px;
+  background: $darker-charcoal;
+  padding: 0 5px;
+  margin-left: 5px;
+  font-size: 24px;
+  color: #fff;
+}
+
+#dm-bpm-input-label {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 20px;
+}
+.dm-bpm-switch-btn {
+  font-size: 24px;
+  background: $darker-charcoal;
+  color: #fff;
+  width: 42px;
+  height: 42px;
+  border-radius: 0;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+#dm-bpm-sequence-select {
+  height: 42px;
+  width: 150px;
+  margin-left: 30px;
+  font-size: 17px;
+}
