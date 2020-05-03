@@ -8,7 +8,7 @@ import {
 } from "../../actions/controlBarActions";
 import "./ControlBar.scss";
 
-const BPMInput = () => {
+const ControlBar = () => {
   const bpm = useSelector((state) => state.controlBar.bpm);
   const currentSequence = useSelector(
     (state) => state.controlBar.currentSequence
@@ -35,7 +35,7 @@ const BPMInput = () => {
     <div id="dm-bpm-control-bar">
       <button
         aria-label="Stop Playing"
-        class="dm-bpm-switch-btn"
+        className="dm-bpm-switch-btn"
         onClick={handleStopClick}
       >
         &#9641;
@@ -43,7 +43,7 @@ const BPMInput = () => {
 
       <button
         aria-label="Start Playing"
-        class="dm-bpm-switch-btn"
+        className="dm-bpm-switch-btn"
         onClick={handleStartClick}
       >
         &#9654;
@@ -61,7 +61,7 @@ const BPMInput = () => {
       </label>
 
       <select id="dm-bpm-sequence-select" onChange={handleUpdateSequence}>
-        <option selected value="sequence-1">
+        <option defaultValue value="sequence-1">
           Sequence 1
         </option>
         <option value="sequence-2">Sequence 2</option>
@@ -71,4 +71,4 @@ const BPMInput = () => {
   );
 };
 
-export default BPMInput;
+export default ControlBar;
