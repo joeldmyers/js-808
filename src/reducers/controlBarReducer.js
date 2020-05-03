@@ -1,7 +1,7 @@
 const initialState = {
   bpm: 128,
   isPlaying: false,
-  currentlyPlayingStep: 1,
+  currentlyPlayingStep: 0,
   intervalId: null,
 };
 

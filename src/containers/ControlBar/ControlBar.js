@@ -38,13 +38,19 @@ const ControlBar = () => {
   };
 
   const startSamplerInterval = (bpm) => {
-    let counter = 1;
+    dispatch(updatecurrentlyPlayingStep(0));
+    let counter = 0;
     const intervalId = setInterval(() => {
-      const currentlyPlayingStep = (counter % 16) + 1;
-      dispatch(updatecurrentlyPlayingStep(currentlyPlayingStep));
       counter++;
-    }, 800);
+      const currentlyPlayingStep = counter % 16;
+      console.log("currently playing step", currentlyPlayingStep);
+      dispatch(updatecurrentlyPlayingStep(currentlyPlayingStep));
+    }, getIntervalFromBPM(bpm));
     return intervalId;
+  };
+
+  const getIntervalFromBPM = (bpm) => {
+    return 30000 / bpm;
   };
 
   return (

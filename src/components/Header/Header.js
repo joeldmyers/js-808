@@ -30,7 +30,7 @@ const Header = (props) => {
               key={`header-step-${index}`}
               style={{ width: props.buttonWidth }}
             >
-              {index}
+              {index + 1}
             </div>
           )
         )}

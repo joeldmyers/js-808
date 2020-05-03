@@ -48,12 +48,12 @@
 
 @keyframes blink {
   0% {
-    color: $console-black;
+    color: $off-light-red;
   }
   2% {
     color: $on-light-red;
   }
   6% {
-    color: $console-black;
+    color: $off-light-red;
   }
 }
