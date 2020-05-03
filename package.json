@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-starter",
+  "name": "js-808",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,17 +9,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --mode development"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/joeldmyers/elements-quiz.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/joeldmyers/elements-quiz/issues"
-  },
-  "homepage": "https://github.com/joeldmyers/elements-quiz#readme",
+  "homepage": "anonymous",
   "devDependencies": {
     "@babel/cli": "^7.8.4",
     "@babel/core": "^7.9.6",
