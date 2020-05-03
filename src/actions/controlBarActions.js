@@ -27,3 +27,12 @@ export const updateCurrentPlayStep = (currentPlayStep) => {
     },
   };
 };
+
+export const updateIntervalId = (intervalId) => {
+  return {
+    type: "UPDATE_INTERVAL_ID",
+    payload: {
+      intervalId,
+    },
+  };
+};

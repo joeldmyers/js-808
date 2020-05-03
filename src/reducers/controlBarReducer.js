@@ -2,6 +2,7 @@ const initialState = {
   bpm: 128,
   isPlaying: false,
   currentPlayStep: 1,
+  intervalId: null,
 };
 
 export default function (state = initialState, action) {
@@ -22,12 +23,20 @@ export default function (state = initialState, action) {
       return {
         ...state,
         isPlaying: false,
+        currentPlayStep: 1,
+        intervalId: null,
       };
     case "UPDATE_CURRENT_PLAY_STEP":
       const { currentPlayStep } = action.payload;
       return {
         ...state,
         currentPlayStep,
+      };
+    case "UPDATE_INTERVAL_ID":
+      const { intervalId } = action.payload;
+      return {
+        ...state,
+        intervalId,
       };
 
     default:

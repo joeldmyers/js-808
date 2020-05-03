@@ -5,45 +5,48 @@ import {
   startPlaying,
   stopPlaying,
   updateCurrentPlayStep,
+  updateIntervalId,
 } from "../../actions/controlBarActions";
 import { resetToBuiltInSequence } from "../../actions/instrumentStatusActions";
 import "./ControlBar.scss";
 
 const ControlBar = () => {
+  // Getting state from Redux
   const bpm = useSelector((state) => state.controlBar.bpm);
+  const currentPlayStep = useSelector(
+    (state) => state.controlBar.currentPlayStep
+  );
+  const intervalId = useSelector((state) => state.controlBar.intervalId);
   const dispatch = useDispatch();
 
   const handleBPMChange = (e) => {
     dispatch(updateBPM(e.currentTarget.value));
   };
 
+  const handleUpdateSequence = (e) => {
+    dispatch(resetToBuiltInSequence(e.currentTarget.value));
+  };
+
   const handleStartClick = () => {
     dispatch(startPlaying());
-    startPlayingSampler();
-  };
-
-  let drumMachinePlayInterval;
-
-  const startPlayingSampler = (bpm) => {
-    let counter = 1;
-    drumMachinePlayInterval = setInterval(() => {
-      const currentPlayStep = (counter % 16) + 1;
-      dispatch(updateCurrentPlayStep(currentPlayStep));
-      step++;
-    }, 800);
-  };
-
-  const stopPlayingSampler = () => {
-    clearInterval(drumMachinePlayInterval);
+    const intervalId = startSamplerInterval(bpm);
+    console.log("interval id", intervalId);
+    dispatch(updateIntervalId(intervalId));
   };
 
   const handleStopClick = () => {
     dispatch(stopPlaying());
-    stopPlayingSampler();
+    clearInterval(intervalId);
   };
 
-  const handleUpdateSequence = (e) => {
-    dispatch(resetToBuiltInSequence(e.currentTarget.value));
+  const startSamplerInterval = (bpm) => {
+    let counter = 1;
+    const intervalId = setInterval(() => {
+      const currentPlayStep = (counter % 16) + 1;
+      dispatch(updateCurrentPlayStep(currentPlayStep));
+      counter++;
+    }, 800);
+    return intervalId;
   };
 
   return (
