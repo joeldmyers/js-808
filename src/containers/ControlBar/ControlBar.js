@@ -43,7 +43,6 @@ const ControlBar = () => {
     const intervalId = setInterval(() => {
       counter++;
       const currentlyPlayingStep = counter % 16;
-      console.log("currently playing step", currentlyPlayingStep);
       dispatch(updatecurrentlyPlayingStep(currentlyPlayingStep));
     }, getIntervalFromBPM(bpm));
     return intervalId;

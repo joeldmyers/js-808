@@ -9,7 +9,6 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
-  console.log("old state from sequencer row", state);
   switch (action.type) {
     case "TOGGLE_BUTTON_STATUS":
       const { instrumentName, sequenceNumber } = action.payload;
