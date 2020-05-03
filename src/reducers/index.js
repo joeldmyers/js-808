@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import counter from "./counterReducer";
+import controlBar from "./controlBarReducer";
 
 const rootReducer = combineReducers({
-  counter,
+  controlBar,
 });
 
 export default rootReducer;

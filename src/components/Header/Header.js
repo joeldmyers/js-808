@@ -1,5 +1,6 @@
 import React from "react";
 import "./Header.scss";
+import BPMInput from "../../containers/BPMInput/BPMInput";
 
 const Header = (props) => {
   const generateSequencerButtonArray = (numSteps) => {
@@ -16,9 +17,7 @@ const Header = (props) => {
         <div id="dm-header-left">
           <h1>JS-808</h1>
         </div>
-        <div id="dm-header-right">
-          <p>[TK]</p>
-        </div>
+        <div id="dm-header-right">{/* <BPMInput /> */}</div>
         <div id="dm-header-step-numbers"></div>
       </div>
       <div id="dm-header-step-labels">
