@@ -20,9 +20,7 @@ const ControlBar = () => {
     dispatch(updateBPM(e.currentTarget.value));
   };
 
-  const handleStartClick = () => {
-    dispatch(startPlaying());
-  };
+  const handleStartClick = () => {};
 
   const handleStopClick = () => {
     dispatch(stopPlaying());

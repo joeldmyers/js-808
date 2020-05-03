@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { toggleButtonStatus } from "../../actions/instrumentStatusActions";
-import SequencerButton from "../../components/SequencerButton/SequencerButton";
+import SequencerButton from "../SequencerButton/SequencerButton";
 import "./SequencerRow.scss";
 
 const SequencerRow = (props) => {
@@ -24,6 +24,7 @@ const SequencerRow = (props) => {
               buttonWidth={props.buttonWidth}
               key={`${props.instrumentName}-${index}`}
               active={active}
+              instrumentName={instrumentName}
             />
           );
         })}

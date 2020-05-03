@@ -1,8 +1,9 @@
-export const toggleButtonStatus = (instrument, sequenceNumber) => {
+export const toggleButtonStatus = (instrumentName, sequenceNumber) => {
   return {
     type: "TOGGLE_BUTTON_STATUS",
     payload: {
-      sequenceName,
+      instrumentName,
+      sequenceNumber,
     },
   };
 };
