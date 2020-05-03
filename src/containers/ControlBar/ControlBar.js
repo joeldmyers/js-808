@@ -4,17 +4,16 @@ import {
   updateBPM,
   startPlaying,
   stopPlaying,
-  updateCurrentPlayStep,
+  updatecurrentlyPlayingStep,
   updateIntervalId,
 } from "../../actions/controlBarActions";
 import { resetToBuiltInSequence } from "../../actions/instrumentStatusActions";
 import "./ControlBar.scss";
 
 const ControlBar = () => {
-  // Getting state from Redux
   const bpm = useSelector((state) => state.controlBar.bpm);
-  const currentPlayStep = useSelector(
-    (state) => state.controlBar.currentPlayStep
+  const currentlyPlayingStep = useSelector(
+    (state) => state.controlBar.currentlyPlayingStep
   );
   const intervalId = useSelector((state) => state.controlBar.intervalId);
   const dispatch = useDispatch();
@@ -30,7 +29,6 @@ const ControlBar = () => {
   const handleStartClick = () => {
     dispatch(startPlaying());
     const intervalId = startSamplerInterval(bpm);
-    console.log("interval id", intervalId);
     dispatch(updateIntervalId(intervalId));
   };
 
@@ -42,8 +40,8 @@ const ControlBar = () => {
   const startSamplerInterval = (bpm) => {
     let counter = 1;
     const intervalId = setInterval(() => {
-      const currentPlayStep = (counter % 16) + 1;
-      dispatch(updateCurrentPlayStep(currentPlayStep));
+      const currentlyPlayingStep = (counter % 16) + 1;
+      dispatch(updatecurrentlyPlayingStep(currentlyPlayingStep));
       counter++;
     }, 800);
     return intervalId;

@@ -19,11 +19,11 @@ export const stopPlaying = () => {
   };
 };
 
-export const updateCurrentPlayStep = (currentPlayStep) => {
+export const updatecurrentlyPlayingStep = (currentlyPlayingStep) => {
   return {
     type: "UPDATE_CURRENT_PLAY_STEP",
     payload: {
-      currentPlayStep,
+      currentlyPlayingStep,
     },
   };
 };
