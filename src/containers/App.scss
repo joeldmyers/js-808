@@ -1,3 +1,15 @@
+@import "../styles/colors.scss";
+
 body {
-  background: #eaeaea;
+  background: $pale-white;
+}
+
+#tr-drum-machine {
+  background: $light-charcoal;
+  width: calc(80% - 60px);
+  margin-left: 10%;
+  min-height: 500px;
+  transform: perspective(400px) rotateX(6deg);
+  border-radius: 6px;
+  padding: 30px;
 }

@@ -1,0 +1,26 @@
+@import "../../styles/colors.scss";
+
+#dm-header {
+  border-bottom: 2px solid $grey;
+  h1 {
+    color: $dark-orange;
+  }
+  #dm-header-left {
+    display: inline-block;
+    width: 60%;
+  }
+  #dm-header-right {
+    display: inline-block;
+    width: 40%;
+  }
+  #dm-header-step-labels {
+    width: calc(100% - 200px);
+    padding-left: 200px;
+    float: right;
+  }
+  .dm-header-step-label {
+    display: inline-block;
+    margin: 6px;
+    color: $grey;
+  }
+}
