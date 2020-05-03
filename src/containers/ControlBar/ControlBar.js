@@ -4,8 +4,10 @@ import {
   updateBPM,
   startPlaying,
   stopPlaying,
-  updateCurrentSequence,
 } from "../../actions/controlBarActions";
+
+import { resetToBuiltInSequence } from "../../actions/instrumentStatusActions";
+
 import "./ControlBar.scss";
 
 const ControlBar = () => {
@@ -26,7 +28,7 @@ const ControlBar = () => {
     dispatch(stopPlaying());
   };
   const handleUpdateSequence = (e) => {
-    dispatch(updateCurrentSequence(e.currentTarget.value));
+    dispatch(resetToBuiltInSequence(e.currentTarget.value));
   };
 
   return (

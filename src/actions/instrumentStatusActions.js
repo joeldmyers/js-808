@@ -8,9 +8,9 @@ export const toggleButtonStatus = (instrumentName, sequenceNumber) => {
   };
 };
 
-export const resetToBuiltInSequence = (sequenceNumber) => {
+export const resetToBuiltInSequence = (sequenceName) => {
   return {
-    type: "RESET_TO_SEQUENCE",
+    type: "RESET_TO_BUILT_IN_SEQUENCE",
     payload: {
       sequenceName,
     },
