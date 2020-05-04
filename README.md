@@ -18,9 +18,9 @@ Then navigate to http://localhost:3000
 - Prettier
 - ESLint
 
-## My Notes on How I would finish:
+## How I Would Finish
 
-Generally this is a working prototype that meets the spec (including sound!). However, there is a lot of refactoring I'd like to do. Honestly, I had a lot of fun with this, but I also have a very busy few days and am pretty short on time to continue, otherwise I would probably spend more time making this stronger and maybe adding some more features.
+Generally this is a working prototype that meets the spec (including sound!). However, there is a lot of refactoring I'd like to do. Honestly, I had a lot of fun with this, but I also have a very busy few days and am pretty short on time to continue, otherwise I would probably spend more time making this stronger, cleaning up the logic, adding testing, and maybe adding some more features.
 
 ### Notes on my Next Steps for Refactoring
 
