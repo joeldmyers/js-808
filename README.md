@@ -4,7 +4,7 @@ A React-based Drum Machine / Sequencer, inspired by the TR-808.
 
 ## Getting Started
 
-Just to be safe, use NVM to use Node v12. Then run `npm i`, and then when that's done run `npm start`.
+Just to be safe, use NVM to switch to Node v12. Then run `npm i`, and then when that's done run `npm start`.
 
 Then navigate to http://localhost:3000
 
@@ -28,9 +28,9 @@ Generally this is a working prototype that meets the spec (including sound!). Ho
 
 - **Reusable Components and Hooks** As of now, this current setup does not have a lot in the way of reusable components. If I were building this as part of a bigger codebase, I would strongly consider looking at ways I might be able to abstract some of the aspects of this project so that they could be brought out into a shared library and used elsewhere.
 
-- **Font:** A very small note: I'd want to bring in the 808-esque font I poached from a quick Internet search, rather than linking to an external link; or of course, use another font given to me :)
+- **Font:** A very small note: I'd want to bring in the 808-esque font I poached from a quick Internet search, rather than linking to an external link; or of course, just use another font provided to me by a designer :)
 
-- **Webpack Setup:** - my setup was fairly minimal and focused on setting up all the dev tooling I needed. I'd ideally go back and work through and set up code splitting, tree shaking, etc. if this were to go into production.
+- **Webpack Setup:** - My setup was fairly minimal and focused on setting up functional dev tooling. I'd ideally go back and work through and set up code splitting, tree shaking, and other optimizations. if this were to go into production.
 
 - **BPM:**: currently, you can't update the bpm while playing. I think this could be resolved by essentially clearing the old interval and creating a new setInterval every time the BPM value is changed, but I didn't get time to work that in.
 
