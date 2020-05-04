@@ -26,7 +26,9 @@ Generally this is a working prototype that meets the spec (including sound!). Ho
 
 - **setInterval:** The setInterval aspect in the player component is rough. React is actually somewhat known for handling setInterval poorly, and this was the hardest part of the assignment to me - not the setInterval itself, but tracking the reference to it so the stop button could stop it effectively. I'd want to go back and refactor that creating a custom hook, using useRef and useEffect, and make sure it returns a function to clear the effect, to avoid any memory leaks.
 
-- **Font:** I'd want to bring in the 808-esque font I poached from a quick Internet search, rather than linking to an external link (of course with all credit left on there).
+- **Reusable Components and Hooks** As of now, this current setup does not have a lot in the way of reusable components. If I were building this as part of a bigger codebase, I would strongly consider looking at ways I might be able to abstract some of the aspects of this project so that they could be brought out into a shared library and used elsewhere.
+
+- **Font:** A very small note: I'd want to bring in the 808-esque font I poached from a quick Internet search, rather than linking to an external link; or of course, use another font given to me :)
 
 - **Webpack Setup:** - my setup was fairly minimal and focused on setting up all the dev tooling I needed. I'd ideally go back and work through and set up code splitting, tree shaking, etc. if this were to go into production.
 
