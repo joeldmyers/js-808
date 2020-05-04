@@ -17,3 +17,5 @@ Then navigate to http://localhost:3000
 - Babel
 - Prettier
 - ESLint
+
+## Deployed to Heroku.
