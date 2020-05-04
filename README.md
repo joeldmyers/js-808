@@ -49,7 +49,7 @@ I didn't get a chance to set up testing. I generally use Nightwatch for E2E test
 
 #### React-Testing-Library
 
-- Render components through the library, and run basic expect statements.
+- Render components through the library, and run basic expect statements for the controls, buttons, etc.
 
 #### Nightwatch
 
