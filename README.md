@@ -10,7 +10,7 @@ https://evening-bastion-13326.herokuapp.com/
 
 ## Getting Started
 
-Just to be safe, use NVM to switch to Node v12. Then run `npm i`, and then when that's done run `npm start`.
+Use NVM to switch to Node v12. Then run `npm i`, and then when that's done run `npm start`.
 
 Then navigate to http://localhost:3000
 
