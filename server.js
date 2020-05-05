@@ -3,12 +3,6 @@ const port = process.env.PORT || 8080;
 const path = require("path");
 const app = express();
 
-// the __dirname is the current directory from where the script is running
-app.use(express.static("public"));
-
-// send the user to index html page inspite of the url
-app.get("/", (req, res) => {
-  res.sendFile(path.resolve("public/index.html"));
-});
+app.use("/", express.static("public"));
 
 app.listen(port);
