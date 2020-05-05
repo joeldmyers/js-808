@@ -19,6 +19,8 @@ Then navigate to http://localhost:3000
 To play, click the play button, to stop, click the stop button.
 Each button represents a time one of the four "instruments" play in the sequencer. You can adjust the sequence by toggling the buttons on and off.
 
+Note that to change the tempo, first you have to stop the sequencer, then change the tempo, then restart.
+
 Have fun!
 
 ## Tech
