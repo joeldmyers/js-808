@@ -4,11 +4,11 @@ const path = require("path");
 const app = express();
 
 // the __dirname is the current directory from where the script is running
-app.use(express.static(__dirname + "public"));
+app.use(express.static("public"));
 
 // send the user to index html page inspite of the url
 app.get("/", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "public/index.html"));
+  res.sendFile(path.resolve("public/index.html"));
 });
 
 app.listen(port);
