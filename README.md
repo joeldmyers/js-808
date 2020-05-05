@@ -6,6 +6,8 @@ A React-based Drum Machine / Sequencer, inspired by the TR-808.
 
 http://evening-bastion-13326.herokuapp.com/
 
+(note that the app is slow just because it's deployed to a free Heroku dyno)
+
 ## Getting Started
 
 Just to be safe, use NVM to switch to Node v12. Then run `npm i`, and then when that's done run `npm start`.
